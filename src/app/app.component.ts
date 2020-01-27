@@ -9,5 +9,5 @@ export class AppComponent {
   title = 'AngularTeste';
 
   public name = 'Alexandre Telles';
-  public message = "";
+  public message = '';
 }

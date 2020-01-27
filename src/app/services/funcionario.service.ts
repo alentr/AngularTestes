@@ -9,9 +9,9 @@ export class FuncionarioService {
 
   getFuncionarios() {
     return [
-      {"id": 1, "name": "Alexandre", "age": 27},
-      {"id": 2, "name": "Ágda", "age": 35},
-      {"id": 3, "name": "Heitor", "age": 1}
+      {id: 1, name: 'Alexandre', age: 27},
+      {id: 2, name: 'Ágda', age: 35},
+      {id: 3, name: 'Heitor', age: 1}
     ];
   }
 }
