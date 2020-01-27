@@ -1,3 +1,4 @@
+import { FuncionarioService } from './../services/funcionario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,15 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TesteServiceComponent implements OnInit {
 
-  public funcionarios = [
-    {"id": 1, "name": "Alexandre", "age": 27},
-    {"id": 2, "name": "Ágda", "age": 35},
-    {"id": 3, "name": "Heitor", "age": 1}
-  ]
+  public funcionarios = [];
 
-  constructor() { }
+  constructor(private funcionarioService: FuncionarioService) { }
 
   ngOnInit() {
+    this.funcionarios = this.funcionarioService.getFuncionarios();
   }
 
 }

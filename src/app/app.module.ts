@@ -1,3 +1,4 @@
+import { FuncionarioService } from './services/funcionario.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -24,7 +25,7 @@ import { TesteServiceComponent } from './teste-service/teste-service.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [FuncionarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
