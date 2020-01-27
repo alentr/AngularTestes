@@ -1,0 +1,23 @@
+<p>{{ name }}</p>
+<p>lowercase: {{ name | lowercase }}</p>
+<p>uppercase: {{ name | uppercase }}</p>
+<p>titlecase: {{ message | titlecase }}</p>
+<p>slice:3: {{ name | slice:3 }}</p>
+<p>slice:3:7 {{ name | slice:3:7 }}</p>
+<p>json: {{ person | json }}</p>
+
+<p>number:'1.2-3': {{ 5.678 | number:'1.2-3' }}</p>
+<p>number:'3.4-5': {{ 5.678 | number:'3.4-5' }}</p>
+<p>number:'3.1-2': {{ 5.678 | number:'3.1-2' }}</p>
+
+<p>percent: {{ 0.25 | percent }}</p>
+
+<p>currency: {{ 0.25 | currency }}</p>
+<p>currency: 'BRL': {{ 0.25 | currency: 'BRL' }}</p>
+
+<p>currency: 'BRL': 'code': {{ 0.25 | currency: 'BRL': 'code' }}</p>
+
+<p>{{ date }}</p>
+<p>date: 'short': {{ date | date: 'short' }}</p>
+<p>date: 'shortDate': {{ date | date: 'shortDate' }}</p>
+<p>date: 'shortTime': {{ date | date: 'shortTime' }}</p>
