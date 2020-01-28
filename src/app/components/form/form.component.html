@@ -1,74 +1,116 @@
 <p-toast position="bottom-right" [style]="{marginBottom: '20px'}"></p-toast>
 
 <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
-    <p-panel header="Validate">
-        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
-            <div class="ui-grid-row">
-                <div class="ui-grid-col-2">
-                    First Name *:
-                </div>
-                <div class="ui-grid-col-6">
-                    <input pInputText type="text" formControlName="firstname" placeholder="Required"/>
-                </div>
-                <div class="ui-grid-col-4">
-                    <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty"></p-message>
-                </div>
-            </div>
-            <div class="ui-grid-row">
-                <div class="ui-grid-col-2">
-                    Last Name *:
-                </div>
-                <div class="ui-grid-col-6">
-                    <input pInputText type="text" formControlName="lastname" placeholder="Required"/>
-                </div>
-                <div class="ui-grid-col-4">
-                    <p-message severity="error" text="Lastname is required" *ngIf="!userform.controls['lastname'].valid&&userform.controls['lastname'].dirty"></p-message>
-                </div>
-            </div>
-            <div class="ui-grid-row">
-                <div class="ui-grid-col-2">
-                    Password *:
-                </div>
-                <div class="ui-grid-col-6">
-                    <input pInputText type="password" formControlName="password" placeholder="Required - Min(6)"/>
-                </div>
-                <div class="ui-grid-col-4">
-                <p-message severity="error" [text]="userform.controls['password'].errors['required'] ? 'Password is required' : userform.controls['password'].errors['minlength'] ? 'Must be longer than 6 characters' : ''"
-                        *ngIf="!userform.controls['password'].valid&&userform.controls['password'].dirty"></p-message>
-                </div>
-            </div>
-            <div class="ui-grid-row">
-                <div class="ui-grid-col-2">
-                    Description:
-                </div>
-                <div class="ui-grid-col-6">
-                    <textarea pInputTextarea type="text" formControlName="description"></textarea>
-                </div>
-                <div class="ui-grid-col-4"></div>
-            </div>
-            <div class="ui-grid-row">
-                <div class="ui-grid-col-2">
-                    Gender *:
-                </div>
-                <div class="ui-grid-col-6">
-                    <p-dropdown [options]="genders" formControlName="gender"></p-dropdown>
-                </div>
-                <div class="ui-grid-col-4">
-                    <p-message severity="error" text="Gender is required" *ngIf="!userform.controls['gender'].valid&&userform.controls['gender'].dirty"></p-message>
-                </div>
-            </div>
-            <div class="ui-grid-row">
-                <div class="ui-grid-col-2"></div>
-                <div class="ui-grid-col-6">
-                    <button pButton type="submit" label="Submit" [disabled]="!userform.valid"></button>
-                </div>
-                <div class="ui-grid-col-4"></div>
-            </div>
-            <div style="text-align:center;margin-top:20px" *ngIf="submitted">
-                Form Submitted
-                <br>
-                {{diagnostic}}
-            </div>
+  <p-panel header="Validate">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          First Name *:
         </div>
-    </p-panel>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="firstname" placeholder="Required" />
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error" text="Firstname is required"
+            *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Last Name *:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="lastname" placeholder="Required" />
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Rate me:
+        </div>
+        <div class="ui-grid-col-6">
+          <p-rating formControlName="rate" ></p-rating>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Age *:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="number" formControlName="age" placeholder="Required" min="1" />
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          E-mail *:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="email" formControlName="email" placeholder="Required" ngModel email="true" />
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Date of birth *:
+        </div>
+        <div class="ui-grid-col-6">
+          <!-- <p-calendar formControlName="birth" [monthNavigator]="true" [yearNavigator]="true" dateFormat="dd/mm/yy" yearRange="1900:2030" [showIcon]="true"></p-calendar> -->
+          <p-inputMask formControlName="birth" mask="99/99/9999" placeholder="99/99/9999" slotChar="mm/dd/yyyy"></p-inputMask>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Telefone *:
+        </div>
+        <div class="ui-grid-col-6">
+          <!-- <p-calendar formControlName="birth" [monthNavigator]="true" [yearNavigator]="true" dateFormat="dd/mm/yy" yearRange="1900:2030" [showIcon]="true"></p-calendar> -->
+          <p-inputMask formControlName="telefone" mask="(99) 9-9999-9999" placeholder="(99) 9-9999-9999"></p-inputMask>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Password *:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="password" formControlName="password" placeholder="Required - Min(6)" />
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error"
+            [text]="userform.controls['password'].errors['required'] ? 'Password is required' : userform.controls['password'].errors['minlength'] ? 'Must be longer than 6 characters' : ''"
+            *ngIf="!userform.controls['password'].valid && userform.controls['password'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Description:
+        </div>
+        <div class="ui-grid-col-6">
+          <textarea pInputTextarea type="text" formControlName="description"></textarea>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Gender *:
+        </div>
+        <div class="ui-grid-col-6">
+          <p-dropdown [options]="genders" formControlName="gender"></p-dropdown>
+        </div>
+        <div class="ui-grid-col-4">
+          <p-message severity="error" text="Gender is required"
+            *ngIf="!userform.controls['gender'].valid&&userform.controls['gender'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">
+          <button pButton type="submit" label="Submit" [disabled]="!userform.valid"></button>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+      <div style="text-align:center;margin-top:20px" *ngIf="submitted">
+        Form Submitted
+        <br>
+        {{diagnostic}}
+      </div>
+    </div>
+  </p-panel>
 </form>

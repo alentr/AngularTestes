@@ -13,6 +13,9 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
+import {CalendarModule } from 'primeng/calendar';
+import {InputMaskModule} from 'primeng/inputmask';
+import {RatingModule} from 'primeng/rating';
 
 import { NgifNgforNgswitchComponent } from './components/ngif-ngfor-ngswitch/ngif-ngfor-ngswitch.component';
 import { TesteServiceComponent } from './components/teste-service/teste-service.component';
@@ -58,7 +61,10 @@ import { FormComponent } from './components/form/form.component';
     MessagesModule,
     InputTextareaModule,
     DropdownModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CalendarModule,
+    InputMaskModule,
+    RatingModule
   ],
   providers: [FuncionarioService],
   bootstrap: [AppComponent]
