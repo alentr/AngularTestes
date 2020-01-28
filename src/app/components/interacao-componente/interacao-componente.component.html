@@ -1,3 +1,2 @@
-<p>interacao-componente works!</p>
-<p>Olá {{nome}}</p>
-<button (click)="fireEvent()">Enviar evento ao pai</button>
+<app-component-filho (chieldEvent)="message = $event" [parentData]="name"></app-component-filho>
+<p>{{ message }}</p>

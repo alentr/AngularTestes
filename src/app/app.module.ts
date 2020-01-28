@@ -13,10 +13,15 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MenubarModule} from 'primeng/menubar';
+import {ButtonModule} from 'primeng/button';
+import {InputTextModule} from 'primeng/inputtext';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { ComponentFilhoComponent } from './components/component-filho/component-filho.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,10 @@ import { MenuComponent } from './components/menu/menu.component';
     PipesComponent,
     TesteServiceComponent,
     NgifNgforNgswitchComponent,
-    MenuComponent
+    MenuComponent,
+    HomeComponent,
+    ComponentFilhoComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,9 @@ import { MenuComponent } from './components/menu/menu.component';
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MenubarModule
+    MenubarModule,
+    ButtonModule,
+    InputTextModule
   ],
   providers: [FuncionarioService],
   bootstrap: [AppComponent]
