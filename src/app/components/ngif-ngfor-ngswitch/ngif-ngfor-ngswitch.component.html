@@ -1,0 +1,36 @@
+<input type="text" (input)="numero = $event.target.value"/>
+
+<!--
+  Verifica se o valor da variável é maior que 5
+-->
+<p *ngIf="numero > 5">Maior que 5</p>
+
+
+<!--
+  Verifica se o valor da variável é igual a 1
+-->
+<p *ngIf="numero === 1">Igual a 1</p>
+
+<!--
+  Verifica se o valor da variável é diferente a 1
+-->
+<p *ngIf="numero !== 1">Diferente de 1</p>
+
+<!--
+  Percorre o array
+-->
+<p *ngFor="let numero of arrNumeros">{{ numero }}</p>
+
+<!--
+  Percorre o array e faz codição para mostrar itens do array
+-->
+<div *ngFor="let numero of arrNumeros">
+  <h3 *ngIf="numero % 2 === 0">{{ numero }}</h3>
+</div>
+
+<div [ngSwitch]="numero">
+  <p *ngSwitchCase="1">Número 1 digitado</p>
+  <p *ngSwitchCase="2">Número 2 digitado</p>
+  <p *ngSwitchCase="3">Número 3 digitado</p>
+  <p *ngSwitchDefault>Número digitado é diferente de 1, 2 ou 3</p>
+</div>
