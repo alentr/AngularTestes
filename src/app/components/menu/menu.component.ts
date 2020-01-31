@@ -16,11 +16,12 @@ export class MenuComponent implements OnInit {
     this.items = [
       {
         label: 'Home',
-        items: [{
-                label: 'Home',
-                icon: 'pi pi-fw pi-home',
-                routerLink: 'home'
-            },
+        items: [
+          {
+            label: 'Home',
+            icon: 'pi pi-fw pi-home',
+            routerLink: 'home'
+          },
         ]
       },
       {separator: true},
@@ -64,6 +65,12 @@ export class MenuComponent implements OnInit {
         label: 'Form',
         icon: 'pi pi-fw',
         routerLink: 'form'
+      },
+      {separator: true},
+      {
+        label: 'Data binding',
+        icon: 'pi pi-fw',
+        routerLink: 'data-binding'
       }
     ];
   }

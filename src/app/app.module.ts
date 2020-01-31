@@ -13,9 +13,9 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
-import {CalendarModule } from 'primeng/calendar';
-import {InputMaskModule} from 'primeng/inputmask';
-import {RatingModule} from 'primeng/rating';
+import { CalendarModule } from 'primeng/calendar';
+import { InputMaskModule} from 'primeng/inputmask';
+import { RatingModule } from 'primeng/rating';
 
 import { NgifNgforNgswitchComponent } from './components/ngif-ngfor-ngswitch/ngif-ngfor-ngswitch.component';
 import { TesteServiceComponent } from './components/teste-service/teste-service.component';
@@ -30,6 +30,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { ComponentFilhoComponent } from './components/component-filho/component-filho.component';
 import { FormComponent } from './components/form/form.component';
+import { DataBindingComponent } from './components/data-binding/data-binding.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { FormComponent } from './components/form/form.component';
     MenuComponent,
     HomeComponent,
     ComponentFilhoComponent,
-    FormComponent
+    FormComponent,
+    DataBindingComponent
   ],
   imports: [
     BrowserModule,

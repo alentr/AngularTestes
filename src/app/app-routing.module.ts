@@ -1,3 +1,4 @@
+import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { FormComponent } from './components/form/form.component';
 import { TesteServiceComponent } from './components/teste-service/teste-service.component';
 import { InteracaoComponenteComponent } from './components/interacao-componente/interacao-componente.component';
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'form',
     component: FormComponent
+  },
+  {
+    path: 'data-binding',
+    component: DataBindingComponent
   }
 ];
 

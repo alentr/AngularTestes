@@ -11,7 +11,7 @@
 <!--
   Verifica se o valor da variável é igual a 1
 -->
-<p *ngIf="numero === 1">Igual a 1</p>
+<p *ngIf="numero == 1">Igual a 1</p>
 
 <!--
   Verifica se o valor da variável é diferente a 1
@@ -27,7 +27,7 @@
   Percorre o array e faz codição para mostrar itens do array
 -->
 <div *ngFor="let numero of arrNumeros">
-  <h3 *ngIf="numero % 2 === 0">{{ numero }}</h3>
+  <h3 *ngIf="numero % 2 == 0">{{ numero }}</h3>
 </div>
 
 <div [ngSwitch]="numero">
